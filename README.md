@@ -1,59 +1,119 @@
-# VrindavanRestaurantUi
+# 🍴 Vrindavan Restaurant – Reservation App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+This project is a full-stack web application for managing a restaurant website with:
 
-## Development server
+🖥️ Frontend: Angular
 
-To start a local development server, run:
+⚙️ Backend: Spring Boot
 
-```bash
+🗄️ Database: MySQL (or PostgreSQL)
+
+🚀 Features
+
+Responsive Home, Menu, About, Contact pages
+
+Make Reservation form (connected to backend)
+
+Store reservation details in the database
+
+API integration between Angular and Spring Boot
+
+# 🛠️ Tech Stack
+
+Frontend: Angular 16+, HTML5, CSS3, TypeScript
+
+Backend: Spring Boot 3+, Java 17
+
+Database: MySQL (or PostgreSQL)
+
+Build Tools: Maven (Backend), Angular CLI (Frontend)
+
+# ⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/vrindavan-restaurant.git
+cd vrindavan-restaurant
+
+2️⃣ Backend (Spring Boot) Setup
+
+Open the backend/ folder in Spring Tool Suite (STS) / IntelliJ / Eclipse
+
+Configure application.properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306/restaurantdb
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
+Run the Spring Boot Application
+
+mvn spring-boot:run
+
+
+# 👉 Server will start at: http://localhost:8080
+
+3️⃣ Frontend (Angular) Setup
+
+Open the frontend/ folder in VS Code
+
+Install dependencies
+
+npm install
+
+
+Run Angular App
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+👉 Angular will run on: http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+4️⃣ Connect Angular with Spring Boot
 
-```bash
-ng generate component component-name
-```
+In reservation.service.ts update API URL:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+private baseUrl = 'http://localhost:8080/api/reservations';
 
-```bash
-ng generate --help
-```
 
-## Building
+Now form submissions will hit the backend. 🎉
 
-To build the project run:
+# 📂 Project Structure
+vrindavan-restaurant/
 
-```bash
-ng build
-```
+│
+├── backend/         # Spring Boot Code
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+│   ├── src/main/java/com/example/restaurant
 
-## Running unit tests
+│   │   ├── controller/ReservationController.java
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+│   │   ├── model/Reservation.java
 
-```bash
-ng test
-```
+│   │   └── repository/ReservationRepository.java
 
-## Running end-to-end tests
+│   └── src/main/resources/application.properties
+│
+├── frontend/                # Angular Code
+│   ├── src/app
+│   │   ├── home/home.component.ts
+│   │   ├── menu/menu.component.ts
+│   │   ├── about/about.component.ts
+│   │   ├── contact/contact.component.ts
+│   │   ├── reservation/reservation.component.ts
+│   │   └── services/reservation.service.ts
+│   └── angular.json
+│
+└── README.md
 
-For end-to-end (e2e) testing, run:
+# 📌 API Endpoints
+Method	Endpoint	Description
+POST	/api/reservations	Create a new reservation
+GET	/api/reservations	Fetch all reservations
+# 📸 Screenshots
 
-```bash
-ng e2e
-```
+👉 (Add screenshots of your Home Page, Menu Page, Reservation Form)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+# 👨‍💻 Author
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Developed with ❤️ by Prajkta More
